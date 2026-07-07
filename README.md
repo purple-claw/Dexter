@@ -1,71 +1,80 @@
-# scoped-renamer README
-
-This is the README for your extension "scoped-renamer". After writing up a brief description, we recommend including the following sections.
-
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+Ah, `vsce` is being protective! It detected that your `README.md` still has the default template text from when you ran `yo code`. You have two options:
 
 ---
 
-## Following extension guidelines
+## **Option 1: Fix the README.md (Recommended)**
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+Open your `README.md` file and replace its contents with something meaningful. Here's a quick template you can use:
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+```markdown
+# Scope Variable Renamer
 
-## Working with Markdown
+A VS Code extension that renames variables strictly within a selected text scope.
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+## Features
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+- Select any scope (lines of code) in your file
+- Rename variables only within that selected scope
+- Variables outside the scope remain unchanged
+- Case-sensitive or case-insensitive matching
+- Word boundary detection (won't change `variable` when renaming `var`)
+- Preview and confirmation before applying changes
 
-## For more information
+## How to Use
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+1. **Select a scope**: Highlight the lines of code where you want to rename variables
+2. **Run the command**: Press `Ctrl+Shift+R` (or use Command Palette → "Rename in Scope")
+3. **Enter variable name**: Type the variable name you want to find
+4. **Enter new name**: Type the new variable name
+5. **Choose matching mode**: Select case-sensitive or case-insensitive
+6. **Confirm**: Review the match count and confirm
+
+## Keyboard Shortcut
+
+- **Windows/Linux**: `Ctrl+Shift+R`
+- **macOS**: `Cmd+Shift+R`
+
+## Example
+
+Before:
+```javascript
+function myFunction() {
+    let var = 50;
+    let variable = 60;
+    console.log(var);
+}
+```
+
+After renaming `var` to `newVar` in the selected scope:
+```javascript
+function myFunction() {
+    let newVar = 50;
+    let variable = 60;  // ← unchanged (different variable name)
+    console.log(newVar);
+}
+```
+
+## Requirements
+
+None
+
+## Extension Settings
+
+None
+
+## Known Issues
+
+None
+
+## Release Notes
+
+### 0.0.1
+- Initial release
+- Scope-based variable renaming
+- Case-sensitive/insensitive matching
+- Word boundary protection
+
+---
 
 **Enjoy!**
+```

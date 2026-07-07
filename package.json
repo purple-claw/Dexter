@@ -3,6 +3,7 @@
   "displayName": "Dexter",
   "description": "Renames Variables Strictly within specifed scope.",
   "version": "0.0.1",
+  "publisher": "purpleclaw",
   "engines": {
     "vscode": "^1.125.0"
   },
