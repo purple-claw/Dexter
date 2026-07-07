@@ -18,6 +18,13 @@
         "title": "Rename in Scope",
         "category": "Dexter"
       }
+    ],
+    "keybindings" : [
+      {
+        "command" : "scoped-renamer.renameInScope",
+        "key" : "ctrl+shift+r",
+        "when" : "editorTextFocus"
+      }
     ]
   },
   "scripts": {

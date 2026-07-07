@@ -1,0 +1,7 @@
+[
+    {
+        "key" : "ctrl+shift+r",
+        "command" : "scoped-renamer.renameInScope",
+        "when" : "editorTextFocus"
+    }
+]
