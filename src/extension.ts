@@ -9,7 +9,7 @@ export function activate(context: vscode.ExtensionContext) {
 			return;
 		}
 		const selection = edtr.selection;
-		if (!selection.isEmpty){
+		if (selection.isEmpty){
 			vscode.window.showWarningMessage('Please select a scope (highlight some text) before running this command!.');
 			return;
 		}
